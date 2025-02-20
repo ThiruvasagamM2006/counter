@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter App</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image:
+            background-size: cover;
+            background-position: center;
+        }
+
+        .counter-container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+            padding: 30px;
+            border-radius: 20px; /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        #counter {
+            font-size: 64px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 30px; /* Fully rounded buttons */
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:nth-child(1) {
+            background-color: #ff4d4d;
+            color: white;
+        }
+
+        button:nth-child(2) {
+            background-color: #808080;
+            color: white;
+        }
+
+        button:nth-child(3) {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="counter-container">
+        <h1>Counter App</h1>
+        <p id="counter">0</p>
+        <div class="buttons">
+            <button onclick="decrement()">Decrement</button>
+            <button onclick="reset()">Reset</button>
+            <button onclick="increment()">Increment</button>
+        </div>
+    </div>
+
+    <script>
+        let count = 0;
+
+        function increment() {
+            count++;
+            updateCounter();
+        }
+
+        function decrement() {
+            count--;
+            updateCounter();
+        }
+
+        function reset() {
+            count = 0;
+            updateCounter();
+        }
+
+        function updateCounter() {
+            document.getElementById("counter").innerText = count;
+        }
+    </script>
+</body>
+
+</html>
